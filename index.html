@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Counter</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main">
+            <div class="container">
+                <div class="content">
+                    <div class="left-section">
+                        <h2 class="title">Write your text :</h2>
+                        
+                            <div >
+                                <textarea id="name" placeholder="Your Text . . ."></textarea>
+                                
+                                
+                            </div>
+                           
+                            <div class= "form-button">
+                                <input type="submit" name="count" onclick="openAlert()"  id="count" class="count-btn" value="Count"/>
+                            </div>
+                        
+                    </div>
+                    <div class="right-section">
+                        <figure><img src="images/count.jpg" alt=" image"></figure>
+                        
+                    </div>
+                   
+                </div>
+                <div class="count-alert" id="count-alert">
+                    <h3 id="counter"></h3>
+                    <button type="button" onclick="closeAlert()">OK</button>
+                   </div>
+            </div>
+       
+
+        
+
+    </div>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script >
+let count_alert=document.getElementById("count-alert");
+function openAlert(){
+    count_alert.classList.add("open-alert");
+    
+            var str = document.getElementById("name").value;
+            var charCounter=0;
+        
+            for(var i=0 ;i<str.length;i++){
+                if(str[i] != " "){
+                    charCounter+=1;
+                }    
+            }
+        document.getElementById("counter").innerHTML = "The text you entered consists of :  " + charCounter;
+        document.getElementById("name").value="";
+        //document.getElementById("spaceCounter").innerHTML = spaceCounter+"    spaces";
+        }
+    function closeAlert(){
+      count_alert.classList.remove("open-alert");
+    }
+function clear_text(){
+document.getElementById("input_text").value = "";
+}
+</script>
+</body>
+</html>
