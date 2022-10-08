@@ -1,7 +1,9 @@
 *{
   font-family: 'Comic Sans MS';
 }
-
+textarea{
+  resize: none;
+}
 .count-btn {
   display: inline-block;
   background: #6dabe4;
